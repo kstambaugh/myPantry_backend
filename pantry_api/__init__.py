@@ -3,6 +3,7 @@ import os
 from dotenv import load_dotenv
 from flask import Flask, redirect, request, jsonify
 from flask_migrate import Migrate
+from flask_cors import CORS
 
 
 
@@ -10,6 +11,7 @@ from flask_migrate import Migrate
 def create_app():
 
     app = Flask(__name__)
+    CORS(app)
 
     #config
     load_dotenv()
